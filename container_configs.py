@@ -318,3 +318,37 @@ class ContainerConfig:
             '    restart: unless-stopped\n\n'
         )
         
+    def whisparr(self):
+        return (
+            '  whisparr:\n'
+            '    image: lscr.io/linuxserver/whisparr:latest\n'
+            '    container_name: whisparr\n'
+            '    environment:\n'
+            '      - PUID=13015\n'
+            '      - PGID=13000\n'
+            '      - UMASK=002\n'
+            '      - TZ=' + self.timezone + '\n'
+            '    volumes:\n'
+            '      - ' + self.config_dir + '/whisparr-config:/config\n'
+            '      - ' + self.root_dir + '/data:/data\n'
+            '    ports:\n'
+            '      - "8687:8687"\n'
+            '    restart: unless-stopped\n\n'
+        )
+
+    def smb(self):
+        return (
+            '  smb:\n'
+            '    image: dperson/samba:latest\n'
+            '    container_name: smb\n'
+            '    environment:\n'
+            '      - PUID=13016\n'
+            '      - PGID=13000\n'
+            '      - TZ=' + self.timezone + '\n'
+            '    volumes:\n'
+            '      - ' + self.root_dir + '/data:/mount\n'
+            '    ports:\n'
+            '      - "139:139"\n'
+            '      - "445:445"\n'
+            '    restart: unless-stopped\n\n'
+        )
