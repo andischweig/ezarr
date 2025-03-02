@@ -40,6 +40,8 @@ It's set up to follow the [TRaSH guidelines](https://trash-guides.info/Hardlinks
 - [Overseerr](https://overseerr.dev/) is a show and movie request management and media discovery
    tool.
 - [Jellyseerr](https://github.com/Fallenbagel/jellyseerr) is like Overseerr, but for Jellyfin.
+- [Whisparr](https://whisparr.com/) is like Sonarr, but for adult content.
+- [SMB](https://www.samba.org/) is a file sharing service that allows you to share files across different devices on your network.
 
 ## Requirements
 Currently this script only works on Linux. There is a chance that the sample docker compose file will work on Windows, although untested.
@@ -57,7 +59,7 @@ To make things easier, a CLI has been developed. First, clone the repository in 
 choosing. You can run it by entering `python3 main.py` and the CLI will guide you through the
 process. This is the recommended method if you're setting this up for the first time on a new system. 
 Please take a look at [important notes](#important-notes) before you continue. 
-**NOTE: This script will create users for each container with IDs ranging from 13001 to 13014. 
+**NOTE: This script will create users for each container with IDs ranging from 13001 to 13016. 
 If you want to choose your own IDs (or some of them are occupied) you have to go through the manual install.**
 
 ### Manually

@@ -59,6 +59,8 @@ print('Use Mylar3? [Y/n]', end=" ")
 take_input('mylar3', 'servarr')
 print('Use Audiobookshelf? [Y/n]', end=" ")
 take_input('audiobookshelf', 'servarr')
+print('Use Whisparr? [Y/n]', end=" ")
+take_input('whisparr', 'servarr')
 if len(services_classed['servarr']) == 0:
     print('Warning: no media management services selected.')
 if services_classed['servarr'].__contains__('sonarr') or services_classed['servarr'].__contains__('radarr'):
@@ -86,7 +88,7 @@ take_input('plex', 'ms')
 if services_classed['ms'].__contains__('plex'):
     print('Use Tautulli? [Y/n]', end=" ")
     take_input('tautulli', 'ms')
-    if services_classed['servarr'].__contains__('sonarr') or services_classed['servarr'].__contains__('radarr'):
+    if services_classed['servarr'].__contains__('sonarr') or services_classed['servarr'].__contains__('radarr')):
         print('Use Overseerr? [Y/n]', end=" ")
         take_input('overseerr', 'servarr')
 print('Use Jellyfin? [Y/n]', end=" ")
@@ -107,6 +109,11 @@ print('\n===USENET===')
 services_classed['usenet'] = []
 print('Use SABnzbd? [Y/n]', end=" ")
 take_input('sabnzbd', 'usenet')
+
+print('\n===FILE SHARING===')
+services_classed['file_sharing'] = []
+print('Use SMB? [Y/n]', end=" ")
+take_input('smb', 'file_sharing')
 
 if len(services_classed['torrent']) == 0 and len(services_classed['usenet']) == 0:
     print('Warning: no usenet or BitTorrent clients selected.')

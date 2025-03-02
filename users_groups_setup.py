@@ -111,3 +111,21 @@ class UserGroupSetup:
         os.system('sudo useradd jackett -u 13008')
         self.create_config_dir('jackett')
         os.system('sudo usermod -a -G mediacenter jackett')
+
+    def whisparr(self):
+        os.system(
+            '/bin/bash -c "sudo useradd whisparr -u 13015'
+            ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/whisparr -m 775'
+            ' ; sudo chown -R whisparr:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/whisparr"'
+        )
+        self.create_config_dir('whisparr')
+        os.system('sudo usermod -a -G mediacenter whisparr')
+
+    def smb(self):
+        os.system(
+            '/bin/bash -c "sudo useradd smb -u 13016'
+            ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/smb -m 775'
+            ' ; sudo chown -R smb:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/smb"'
+        )
+        self.create_config_dir('smb')
+        os.system('sudo usermod -a -G mediacenter smb')
